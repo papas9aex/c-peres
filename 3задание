@@ -1,0 +1,44 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int number;
+
+        while (true)
+        {
+            Console.Write("Введите положительное целое число: ");
+            string input = Console.ReadLine();
+
+            if (int.TryParse(input, out number) && number > 0)
+            {
+                break; 
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: Введено не число или не положительное чилсо. Пожалуйста, введите положительное целое число.");
+            }
+        }
+
+        long factorial = CalculateFactorial(number);
+        Console.WriteLine($"Факториал числа {number} равен {factorial}");
+
+        Console.ReadKey(); 
+    }
+
+    static long CalculateFactorial(int n)
+    {
+        if (n == 0)
+        {
+            return 1;
+        }
+
+        long result = 1;
+        for (int i = 1; i <= n; i++)
+        {
+            result *= i;
+        }
+        return result;
+    }
+}
