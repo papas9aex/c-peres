@@ -1,0 +1,46 @@
+1.задание первое на сложение чисел
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        double num1, num2;
+
+        while (true)
+        {
+            Console.Write("Введите первое число: ");
+            string input1 = Console.ReadLine();
+
+            if (double.TryParse(input1, out num1))
+            {
+                break; // если ввод корректен, выходим из цикла
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: Введено некорректное значение. Пожалуйста, введите число.");
+            }
+        }
+
+        while (true)
+        {
+            Console.Write("Введите второе число: ");
+            string input2 = Console.ReadLine();
+
+            if (double.TryParse(input2, out num2))
+            {
+                break; // если ввод корректен, выходим из цикла
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: Введено некорректное значение. Пожалуйста, введите число.");
+            }
+        }
+
+        double sum = num1 + num2;
+        Console.WriteLine($"Сумма чисел {num1} и {num2} равна {sum}");
+
+        Console.ReadKey(); // ожидание нажатия клавиши для завершения программы
+    }
+}
