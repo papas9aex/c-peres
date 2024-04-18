@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string input;
+
+        while (true)
+        {
+            Console.Write("Введите строку: ");
+            input = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                break; 
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: Введена пустая строка. Пожалуйста, введите значение.");
+            }
+        }
+
+        int length = input.Length;
+        Console.WriteLine($"Длина введенной строки: {length}");
+
+        Console.ReadKey(); 
+    }
+}
